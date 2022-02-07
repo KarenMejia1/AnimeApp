@@ -1,0 +1,51 @@
+.auth__main{
+    display: flex;
+    background-image: url('https://images3.alphacoders.com/135/135625.jpg');
+    background-position-x: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.auth__box-container{
+    background-color: white;
+    box-shadow: 0px 3px gray;
+    border-radius: 2px;
+    padding: 20px;
+    height: 430px;
+    width: 300px;
+
+}
+
+.auth__title{
+    color:violet;
+}
+
+.auth__input{
+    margin: 2px;
+    background-color: aquamarine;
+    color: green;
+    border: 0;
+    height: 45px;
+    width: 100%;
+    border-radius: 3px;
+
+    transition: border-bottom .3s ease;
+
+    &:focus{
+        outline: none;
+        border-bottom: 1p solid pink;
+    }
+}
+
+.auth__social-networks{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
