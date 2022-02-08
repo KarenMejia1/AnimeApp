@@ -6,6 +6,8 @@ export const PrincipalScreen = () => {
 
         <div>
             <h1>PrincipalScreen</h1>
+
+            
             <TopAnimesScreen/>
         </div>
 

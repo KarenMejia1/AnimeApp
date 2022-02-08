@@ -1,21 +1,31 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { activeAnime } from '../actions/Anime';
 import { uiOpenModal } from '../actions/ui';
+import { AnimeModal } from '../ui/AnimeModal';
 
-export const CardAnime = ({ title, img }) => {
+export const CardAnime = ({id, title, episodes, rating, img, synopsis}) => {
 
     const dispatch = useDispatch();
 
-    const onClick=(e) =>{
+    
+
+    const onClick=() =>{
         dispatch(uiOpenModal());
+
+        dispatch(activeAnime(id, {
+            title, episodes, img
+        }))
     }
+
+
+    
+
 
     return (
 
         <>
-            {/* <h1>CardImagesAqui</h1> */}
-
-                <div 
+                <div
                 onClick={onClick}
                 className='card__container'>
                     
@@ -26,8 +36,10 @@ export const CardAnime = ({ title, img }) => {
                     </div>
 
                 </div>
-            
 
+                
+            
+        
         </>
 
     )

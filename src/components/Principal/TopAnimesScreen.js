@@ -1,12 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
 import { CardAnime } from '../Anime/CardAnime';
 import { AnimeModal } from '../ui/AnimeModal';
 
 export const TopAnimesScreen = () => {
 
-
     const {data, loading} = useFetchTopAnime();
+
 
 
     return (
@@ -19,16 +20,34 @@ export const TopAnimesScreen = () => {
             <div 
             
             className='card__containerTop'>
+
                 {
+
                     data.map( info => (
                     <CardAnime
                     key={info.id}
                     {...info}/>
                     ))
+
+                    
                     
                 }
             </div>
-            <AnimeModal/>
+        <AnimeModal/>
+
+
+            {/* <div 
+            
+            className='modal__container'>
+                {
+                    data.map( info => (
+                    <AnimeModal
+                    key={info.id}
+                    {...info}/>
+                    ))
+                    
+                }
+            </div> */}
         </div>
 
 

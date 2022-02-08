@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { activeAnime } from '../actions/Anime';
 import { uiCloseModal } from '../actions/ui';
 
 const customStyles = {
@@ -17,11 +19,18 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const AnimeModal = () => {
+export const AnimeModal = ({id, title, episodes, rating, img, synopsis}) => {
 
     const dispatch = useDispatch();
 
+    const {activeAnime} = useSelector( state => state.animes );
+    console.log(activeAnime)
+
     const {modalOpen} = useSelector(state =>state.ui)
+    console.log(modalOpen)
+
+
+    
 
     const closeModal = () =>{
         dispatch(uiCloseModal())
@@ -54,11 +63,11 @@ export const AnimeModal = () => {
                 <img/>
             </div>
 
-            <div className='modal__info'>
-                <h1>Titulo aqui</h1>
+            <div className='modal__info' >
+                <h1 value={title}>{title}titulo</h1>
                 <p>Genero</p>
-                <p>Episodios</p>
-                <p>Rating</p>
+                <p>{episodes}</p>
+                <p>{rating}</p>
                 <p>Trailer</p>
             </div>
 

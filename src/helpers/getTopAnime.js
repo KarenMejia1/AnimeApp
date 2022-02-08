@@ -2,6 +2,8 @@
 
 export const getTopAnime = async() => {
 
+    
+
         const url = `https://api.jikan.moe/v4/top/anime?limit=6`;
         const resp = await fetch(url);
         const {data} = await resp.json();
