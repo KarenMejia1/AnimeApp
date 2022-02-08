@@ -8,6 +8,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import { AnimeScreen } from '../components/Anime/AnimeScreen';
+import { NavBar } from '../components/ui/NavBar';
 import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {
@@ -17,8 +18,8 @@ export const AppRouter = () => {
             <div>
                 <Switch>
                     <Route path='/auth' component={AuthRouter} />
-                    <Route exact path='/' component={AnimeScreen} />
-                    <Redirect to='/auth/login' />
+                    <Route exact path='/inicio' component={AnimeScreen} />
+                    <Redirect to='/inicio' />
                 </Switch>
             </div>
         </Router>
