@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
 import { CardAnime } from '../Anime/CardAnime';
-import { InfoModal } from '../ui/InfoModal';
+import { AnimeModal } from '../ui/AnimeModal';
 
 export const TopAnimesScreen = () => {
 
@@ -28,7 +28,7 @@ export const TopAnimesScreen = () => {
                     
                 }
             </div>
-            <InfoModal/>
+            <AnimeModal/>
         </div>
 
 

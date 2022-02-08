@@ -1,12 +1,23 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { uiOpenModal } from '../actions/ui';
 
-export const CardAnime = ({ title, synopsis, img }) => {
+export const CardAnime = ({ title, img }) => {
+
+    const dispatch = useDispatch();
+
+    const onClick=(e) =>{
+        dispatch(uiOpenModal());
+    }
+
     return (
 
         <>
             {/* <h1>CardImagesAqui</h1> */}
 
-                <div className='card__container'>
+                <div 
+                onClick={onClick}
+                className='card__container'>
                     
                     <img src={img} alt={title} className='card__img' />
 

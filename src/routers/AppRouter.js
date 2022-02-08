@@ -8,7 +8,6 @@ import {
     Redirect,
 } from "react-router-dom";
 import { AnimeScreen } from '../components/Anime/AnimeScreen';
-import { NavBar } from '../components/ui/NavBar';
 import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {
