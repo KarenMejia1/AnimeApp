@@ -54,17 +54,30 @@
 
 }
 
+
+.modal__imagen{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 16vw;
+    height: 30vh;
+}
+
 .modal__info{
     background-color: pink;
     grid-column-start: 2;
     grid-column-end: 4;
-
-    p{
-        background-color: aliceblue;
-        margin: 2px;
-        padding: 10px;
-    }
+    width: 55vw;
 }
+
+.modal__title-input{
+background-color: aliceblue;
+display: block;
+margin: 4px;
+border: none;
+width: 90%;
+}
+
+
 
 
 

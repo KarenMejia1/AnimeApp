@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
+import { useForm } from '../../hooks/useForm';
 import { activeAnime } from '../actions/Anime';
 import { uiCloseModal } from '../actions/ui';
 
@@ -19,69 +21,113 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const AnimeModal = ({id, title, episodes, rating, img, synopsis}) => {
+const initEvent = {
+    title:'',
+}
+
+export const AnimeModal = () => {
 
     const dispatch = useDispatch();
+    const { active: anime } = useSelector(state => state.animes)
 
-    const {activeAnime} = useSelector( state => state.animes );
-    console.log(activeAnime)
-
-    const {modalOpen} = useSelector(state =>state.ui)
-    console.log(modalOpen)
-
+    const { modalOpen } = useSelector(state => state.ui)
 
     
+    const [formValues, setFormValues ] = useState(initEvent);
 
-    const closeModal = () =>{
+    const {id, title, episodes, rating, img, synopsis, genre} = formValues;
+
+
+    useEffect(() => {
+
+        if(anime){
+            setFormValues(anime);
+        }else{
+            setFormValues(initEvent)
+        }
+    }, [anime, setFormValues])
+
+    const handleInputChange = ({target}) => {
+        setFormValues({
+            ...formValues,
+            [target.name]: target.value
+        })
+    }
+
+
+    const closeModal = () => {
         dispatch(uiCloseModal())
     }
-    
 
-    const handleSubmitAnime = (e) =>{
-        e.preventDefault()
 
-        console.log(e)
-    }
     return (
 
-        <Modal
-            isOpen={modalOpen}
-            onRequestClose={closeModal}
-            style={customStyles}
-            closeTimeoutMS={200}
-            overlayClassName='modal-fondo'
-        >
-            
-    {/* Contenido del anime en CARD */}
-        
 
-        <form 
-        onSubmit={handleSubmitAnime}
-        className='modal__container'>
+        <div >
+            <Modal
+                isOpen={modalOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                closeTimeoutMS={200}
+                overlayClassName='modal-fondo'
+            >
 
-            <div className='modal__img'>
-                <img/>
-            </div>
+                <div className='modal__container'>
 
-            <div className='modal__info' >
-                <h1 value={title}>{title}titulo</h1>
-                <p>Genero</p>
-                <p>{episodes}</p>
+                    <div className='modal__img'>
+                        <img className='modal__imagen' src={img}/>
+                    </div>
+
+                    <div className='modal__info' >
+                        <input
+                            type="text"
+                            className="notes__title-input"
+                            autoComplete='off'
+                            name='title'
+                            value={title}
+                            onChange={handleInputChange}
+                            disabled
+                        />
+
+                        <input
+                            type="text"
+                            className="modal__title-input"
+                            autoComplete='off'
+                            name='episodes'
+                            value={episodes}
+                            onChange={handleInputChange}
+                            disabled
+                        />
+
+                        <input
+                            type="text"
+                            placeholder="Some awesome title"
+                            className="modal__title-input"
+                            autoComplete='off'
+                            name='rating'
+                            value={rating}
+                            onChange={handleInputChange}
+                        />
+
+                        {/* <h1 value={title}>{title}titulo</h1> */}
+                        {/* <p>{episodes}</p>
                 <p>{rating}</p>
                 <p>Trailer</p>
-            </div>
+                <p>{genere}</p> */}
+                    </div>
 
-            <div className='modal__sipnosis'>
-                Sipnosis
-            </div>
+                    <div className='modal__sipnosis'>
+                        Sipnosis
+                    </div>
 
-            <div className='modal__guardar'>
-                <button type='submit'>Guardar</button>
-            </div>
+                    <div className='modal__guardar'>
+                        <button type='submit'>Guardar</button>
+                    </div>
 
-        </form>
+                </div>
 
-        </Modal>
+            </Modal>
+        </div>
 
     )
 }

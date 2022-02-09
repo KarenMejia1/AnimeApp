@@ -1,14 +1,34 @@
 // import { getTopAnime } from "../../helpers/getTopAnime"
 import { types } from "../../types/types"
 
+export const startNewNote = () => {
+
+    return async(dispatch, getState)=>{
+        
+        const {id} = getState().animes;
+
+        const newAnime = {
+            title: '',
+            body: '',
+            episodes: ''
+        }
+
+        try{
+    
+            dispatch(activeAnime(newAnime))
+        }catch(error){
+            console.log(error)
+        }
+    }
+}
 
 
-export const activeAnime = (id, info) => ({
 
+export const activeAnime = (id, anime ) => ({
     type: types.animeActive,
     payload: {
         id,
-        ...info
+        ...anime
     }
 })
 

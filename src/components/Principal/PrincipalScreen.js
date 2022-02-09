@@ -1,15 +1,23 @@
-import React from  'react';
-import { TopAnimesScreen } from './TopAnimesScreen';
+import React from 'react';
+import { AnimeModal } from '../ui/AnimeModal';
+import { useSelector } from 'react-redux';
+import { InfoModalAnime } from '../Anime/InfoModalAnime';
 
 export const PrincipalScreen = () => {
-    return(
+
+    // const {active} = useSelector(state => state.animes);
+    // console.log(active)
+
+    return (
 
         <div>
-            <h1>PrincipalScreen</h1>
-
+            <h1>Top animes</h1>
             
-            <TopAnimesScreen/>
+            <InfoModalAnime/>
+            <AnimeModal/>
+
         </div>
+
 
     )
 }

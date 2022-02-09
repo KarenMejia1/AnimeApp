@@ -2,8 +2,8 @@ import { types } from "../types/types";
 
 
 const initialState = {
-    animess: [],
-    activeAnime: null
+    animes: [],
+    active: null
 }
 
 
@@ -11,18 +11,32 @@ export const animesReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case types.animeActive:
-            return{
+            return {
                 ...state,
-                activeAnime :{
+                active: {
                     ...action.payload
                 }
             }
         case types.animeLoad:
-            return{
+            return {
                 ...state,
-                animess: [...action.payload]
+                animes: [...action.payload]
             }
-    
+        case types.animeNew:
+            return {
+                ...state,
+                animes: [action.payload, ...state.notes]
+            }
+
+            case types.animeUpdated:
+                return {
+                    ...state,
+                    animes: state.animes.map(
+                        anime => anime.id === action.payload.id
+                        ? action.payload.note
+                        :anime
+                    )
+                }
         default:
             return state;
     }

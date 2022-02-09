@@ -1,54 +1,39 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
+import { activeAnime } from '../actions/Anime';
+import { uiOpenModal } from '../actions/ui';
 import { CardAnime } from '../Anime/CardAnime';
-import { AnimeModal } from '../ui/AnimeModal';
 
-export const TopAnimesScreen = () => {
+export const TopAnimesScreen = ({ id, title, episodes, rating, img, synopsis }) => {
+
+    // const dispatch = useDispatch();
 
     const {data, loading} = useFetchTopAnime();
 
+    // const onClick=() =>{
+    //     dispatch(uiOpenModal());
 
+    //     dispatch(activeAnime(id, {
+    //         title, episodes, img
+    //     }))
+    // }
 
     return (
-        
-        <div>
-            <h1>TopScreen</h1>
 
-            {loading && <p>Loading</p>}
-            
-            <div 
-            
-            className='card__containerTop'>
+        <div >
+            <div>
+            {
 
-                {
-
-                    data.map( info => (
+                data.map(info => (
                     <CardAnime
-                    key={info.id}
-                    {...info}/>
-                    ))
-
-                    
-                    
-                }
-            </div>
-        <AnimeModal/>
-
-
-            {/* <div 
-            
-            className='modal__container'>
-                {
-                    data.map( info => (
-                    <AnimeModal
-                    key={info.id}
-                    {...info}/>
-                    ))
-                    
-                }
-            </div> */}
+                        key={info.id}
+                        {...info} />
+                ))
+            }
         </div>
+        </div>
+        
 
 
     )
