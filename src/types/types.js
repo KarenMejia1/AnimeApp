@@ -1,6 +1,4 @@
 export const types = {
-    login: '[Auth] Login',
-    logout: '[Auth] Logout',
 
     uiOpenModal: '[ui] Open Modal',
     uiCloseModal: '[ui] Close Modal',
@@ -8,5 +6,14 @@ export const types = {
     animeNew: '[Animes] Anime New',
     animeActive: '[Animes] Set active Anime',
     animeLoad: '[Animes] Load Anime',
-    animeUpdated: '[Animes] Update Anime'
+    animeUpdated: '[Animes] Update Anime',
+
+    authChecking: '[auth] Checking login state',
+    
+    authCheckingFinish: '[auth] Finish checking login state',
+    authStartLogin: '[auth] Start login',
+    authLogin: '[auth] Login',
+    authStartRegister: '[auth] Start Register',
+    authStartTokenRenew: '[auth] Start token renew',
+    authLogout: '[auth] Logout',
 }

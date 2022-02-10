@@ -1,8 +1,7 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { activeAnime } from '../actions/Anime';
 import { uiOpenModal } from '../actions/ui';
-import { AnimeModal } from '../ui/AnimeModal';
 
 export const CardAnime = ({ id, title, episodes, rating, img, synopsis, genre }) => {
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { AnimeModal } from '../ui/AnimeModal';
-import { useSelector } from 'react-redux';
 import { InfoModalAnime } from '../Anime/InfoModalAnime';
 
 export const PrincipalScreen = () => {

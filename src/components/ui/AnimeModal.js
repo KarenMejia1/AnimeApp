@@ -1,11 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
-import { useForm } from '../../hooks/useForm';
-import { activeAnime } from '../actions/Anime';
 import { uiCloseModal } from '../actions/ui';
 
 const customStyles = {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import {
     BrowserRouter as Router,
     Link,
@@ -6,11 +7,21 @@ import {
     Route,
     Switch,
 } from "react-router-dom";
+import { startLogout } from '../actions/auth';
 import { BuscarAnimeScreen } from '../Anime/BusarAnimeScreen';
 import { BuscarMangaScreen } from '../Manga/BuscarMangaScreen';
 import { PrincipalScreen } from '../Principal/PrincipalScreen';
 
 export const NavBar = () => {
+
+    const {name} = useSelector( state => state.auth );
+    const dispatch = useDispatch();
+
+    const handleLogout = () =>{
+        dispatch(startLogout());
+    }
+
+
     return (
 
         <Router>
@@ -34,10 +45,10 @@ export const NavBar = () => {
                     <div className='navbar__der'>
                         <ul>
                             <span>
-                                Karen
+                                {name}
                             </span>
 
-                            <button>
+                            <button onClick={handleLogout}>
                                 Logout
                             </button>
                         </ul>

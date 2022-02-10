@@ -1,14 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
-import { AnimeModal } from '../ui/AnimeModal';
 import { CardAnime } from './CardAnime';
 
 export const InfoModalAnime = () => {
 
     const { data } = useFetchTopAnime();
 
-    const { animes} = useSelector(state => state.animes)
+    // const { animes} = useSelector(state => state.animes)
     // const { active } = useSelector(state => state.animes)
     // console.log(active)
 
