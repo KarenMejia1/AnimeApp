@@ -4,7 +4,7 @@ export const getManga = async(category) =>{
     const resp = await fetch(url);
     const {data} = await resp.json();
 
-    const anime = data.map(info =>{
+    const manga = data.map(info =>{
         return {
             id: info.mal_id,
             title: info.title,
@@ -18,10 +18,8 @@ export const getManga = async(category) =>{
             synopsis: info.synopsis,
             title_english: info.title_english,
             title_japanese: info.title_japanese,
-            trailer: info.trailer.embed_url,
-            trailer_img: info.trailer.images.image_url
         }
     })
 
-    return anime;
+    return manga;
 }
