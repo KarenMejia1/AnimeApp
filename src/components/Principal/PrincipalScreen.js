@@ -9,8 +9,12 @@ export const PrincipalScreen = () => {
 
     return (
 
-        <div>
-            <h1>Top animes</h1>
+        <div className='principal__container'>
+
+            <div>
+                
+            </div>
+
             
             <InfoModalAnime/>
             <AnimeModal/>

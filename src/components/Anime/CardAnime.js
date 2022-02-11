@@ -25,10 +25,6 @@ export const CardAnime = ({ id, title, episodes, rating, img, synopsis, genre })
 
                 <img src={img} alt={title} className='card__img' />
 
-                <div>
-                    <p>{title}</p>
-                </div>
-
 
         </div>
 
