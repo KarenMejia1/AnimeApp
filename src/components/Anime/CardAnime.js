@@ -19,18 +19,16 @@ export const CardAnime = ({ id, title, episodes, rating, img, synopsis, genre })
 
 
     return (
-        <div>
             <div
                 onClick={onClick}
                 className='card__container'>
 
                 <img src={img} alt={title} className='card__img' />
 
-                <div className='overlay__img'>
-                    <p className='text_img'>{title}</p>
+                <div>
+                    <p>{title}</p>
                 </div>
 
-            </div>
 
         </div>
 
