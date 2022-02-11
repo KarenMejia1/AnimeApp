@@ -2,6 +2,8 @@ import React from 'react';
 import { AnimeModal } from '../ui/AnimeModal';
 import { InfoModalAnime } from '../Anime/InfoModalAnime';
 
+import { Banner } from './Banner';
+import { TopManga } from '../Manga/TopManga';
 export const PrincipalScreen = () => {
 
     // const {active} = useSelector(state => state.animes);
@@ -11,13 +13,15 @@ export const PrincipalScreen = () => {
 
         <div className='principal__container'>
 
-            <div>
-                
-            </div>
+            <Banner/>
+
+            <InfoModalAnime />
+
+            <TopManga/>
+            
+            <AnimeModal />
 
             
-            <InfoModalAnime/>
-            <AnimeModal/>
 
         </div>
 

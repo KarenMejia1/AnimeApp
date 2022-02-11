@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTopAnime } from "../helpers/getTopAnime";
+import { getTopAnime, getTopManga } from "../helpers/getTopAnime";
 
 export const useFetchTopAnime =() =>{
 
@@ -19,3 +19,23 @@ export const useFetchTopAnime =() =>{
     },[])
     return state;
 }
+
+export const useFetchTopManga =() =>{
+
+    const [state, setState] = useState({
+        data:[],
+        loading:true
+    });
+
+    useEffect(() =>{
+        getTopManga()
+        .then(info =>{
+            setState({
+                data: info,
+                loading: false
+            })
+        })
+    },[])
+    return state;
+}
+

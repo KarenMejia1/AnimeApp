@@ -1,20 +1,16 @@
 import React from 'react'
-import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
-import { CardAnime } from './CardAnime';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
+import { useFetchTopManga } from '../../hooks/useFetchTopAnime';
+import { CardAnime } from '../Anime/CardAnime';
 
 
-export const InfoModalAnime = () => {
+export const TopManga = () => {
 
-    const { data } = useFetchTopAnime();
-
-    // const { animes} = useSelector(state => state.animes)
-    // const { active } = useSelector(state => state.animes)
-    // console.log(active)
+    const { data } = useFetchTopManga();
 
 
     var settings = {
@@ -22,7 +18,7 @@ export const InfoModalAnime = () => {
         centerPadding: '60px',
         dots: true,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 6,
         swipeToSlide: true,
         initialSlide: 0,
         responsive: [
@@ -54,8 +50,8 @@ export const InfoModalAnime = () => {
     };
 
     return (
-        <div className='top__container'>
-            <h1>Los 20 animes mas populares</h1>
+        <div className='top__container mt-5'>
+            <h1>Los 20 mangas mas populares</h1>
             <Slider 
             {...settings}>
                 {
@@ -70,69 +66,5 @@ export const InfoModalAnime = () => {
             </Slider>
         </div>
 
-
-
-
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { useFetchTopAnime } from '../../hooks/useFetchTopAnime';
-// import { AnimeModal } from '../ui/AnimeModal';
-// import { CardAnime } from '../Anime/CardAnime';
-// import { useSelector } from 'react-redux';
-
-// export const InfoModalAnime = () => {
-
-//     const { data, loading } = useFetchTopAnime();
-
-//     return (
-
-//         <div>
-//             <h1>Top animes</h1>
-
-//             {loading && <p>Loading</p>}
-
-//             <div
-//                 className='card__containerTop'>
-
-//                 {/* {
-
-//                     data.map(info => (
-//                         <AnimeModal
-//                             key={info.id}
-//                             {...info} />
-//                     ))
-//                 } */}
-
-//             </div>
-
-//         </div>
-
-
-
-
-
-//     )
-// }
