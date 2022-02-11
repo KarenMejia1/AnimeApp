@@ -65,19 +65,17 @@ export const startChecking = () => {
         }
     }
 }
-
-const checkingFinish = () => ({
-    type: types.authCheckingFinish
-});
-
 export const login = (user) => ({
     type: types.authLogin,
     payload: user
 })
 
+const checkingFinish = () => ({
+    type: types.authCheckingFinish
+});
 
-// Destrui token, sincrono
 
+// Destruir token, es sincrono
 export const startLogout = () => {
     return ( dispatch ) => {
 

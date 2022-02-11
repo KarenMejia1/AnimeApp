@@ -1,0 +1,41 @@
+.curiosidad_container1{
+    margin-top: 60px;
+}
+
+
+.curiosidad__container{
+    background-color: rgb(78, 83, 72);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 90%;
+    height: 300px;
+    border-radius: 10px;
+    margin: auto;
+    padding: auto;
+}
+
+.curiosidad_card{
+    width: 800px;
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.curiosidad_card h2{
+font-size: 60px;
+}
+
+.curiosidad_card p{
+    font-size: 25px;
+    text-align: justify;
+    }
+
+.curiosidad_imagen img{
+    width: 300px;
+    height: 350px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    transform: translate(-5px, -50px);
+}

@@ -4,6 +4,7 @@ import { InfoModalAnime } from '../Anime/InfoModalAnime';
 
 import { Banner } from './Banner';
 import { TopManga } from '../Manga/TopManga';
+import { Curiosidad } from './Curiosidad';
 export const PrincipalScreen = () => {
 
     // const {active} = useSelector(state => state.animes);
@@ -20,6 +21,8 @@ export const PrincipalScreen = () => {
             <TopManga/>
             
             <AnimeModal />
+
+            <Curiosidad/>
 
             
 
