@@ -3,14 +3,14 @@ import { useDispatch } from 'react-redux';
 import { activeAnime } from '../actions/Anime';
 import { uiOpenModal } from '../actions/ui';
 
-export const CardAnime = ({ id, title, episodes, rating, img, synopsis, genre }) => {
+export const CardAnime = ({ id, title, episodes, rating, img, synopsis, genre, trailer }) => {
 
     const dispatch = useDispatch();
 
     const onClick = () => {
         dispatch(
         activeAnime(id, {
-                title, episodes, img, genre
+                title, episodes, img, genre, rating, synopsis, trailer
             })
         ) 
 

@@ -5,30 +5,32 @@ import { useFetchBuscarAnime } from '../../../hooks/useFetchBuscarAnime';
 
 export const GifGrid = ({ category }) => {
 
-    const {data:images, loading} = useFetchBuscarAnime(category);
+    const { data: images, loading } = useFetchBuscarAnime(category);
 
-return (
-        <>
-            <h3 className='card animate__animated animate__bounce'>{ category }</h3>
-            
+    return (
+        <div>
+            <h3 className='card animate__animated animate__bounce'>Buscando...{category}</h3>
+
             {loading && <p className='card animate__animated animate__flash'>Loading</p>}
 
-            
-        <div className='card__containerTop'>
-            {
-                images.map( img => (
-                    <GifGridItem
-                    key={img.id} 
-                    {...img}
-                    />
-                ))
-            }
+
+            <div className='card-grid'>
+                {
+
+                    images.map(img => (
+                        <GifGridItem
+                            key={img.id}
+                            {...img}
+                        />
+                    ))
+                }
+            </div>
+
         </div>
-        </>
-        
+
     )
 }
 
-GifGrid.propTypes={
+GifGrid.propTypes = {
     category: PropTypes.string.isRequired
 }

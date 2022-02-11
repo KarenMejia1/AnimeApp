@@ -12,12 +12,17 @@ import { BuscarAnimeScreen } from '../Anime/BusarAnimeScreen';
 import { BuscarMangaScreen } from '../Manga/BuscarMangaScreen';
 import { PrincipalScreen } from '../Principal/PrincipalScreen';
 
+
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+
 export const NavBar = () => {
 
-    const {name} = useSelector( state => state.auth );
+    const { name } = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
-    const handleLogout = () =>{
+    const handleLogout = () => {
         dispatch(startLogout());
     }
 
@@ -26,20 +31,21 @@ export const NavBar = () => {
 
         <Router>
 
-            <div>
+            <div className='navbar_main'>
                 <nav className='navbar__main'>
 
-                    <Link to='/inicio' className='link'>Animep</Link>
-
                     <div className='navbar__izq'>
-                        <div>
+
+                    <Link to='/inicio' className='link logo'>Animep</Link>
                             <NavLink to='/animes' className='link item'>
                                 Animes
                             </NavLink>
                             <NavLink to='/mangas' className='link item'>
                                 Mangas
                             </NavLink>
-                        </div>
+                            
+
+                            
                     </div>
 
                     <div className='navbar__der'>
@@ -49,7 +55,8 @@ export const NavBar = () => {
                             </span>
 
                             <button onClick={handleLogout}>
-                                Logout
+                                Cerrar sesion
+                            <i className="fas fa-sign-out-alt"></i> 
                             </button>
                         </ul>
                     </div>
@@ -58,11 +65,11 @@ export const NavBar = () => {
             </div>
 
             <Switch>
-            <Route exact path='/inicio' component={PrincipalScreen} />
-            <Route exact path='/animes' component={BuscarAnimeScreen} />
-            <Route exact path='/mangas' component={BuscarMangaScreen} />
-            
-            
+                <Route exact path='/inicio' component={PrincipalScreen} />
+                <Route exact path='/animes' component={BuscarAnimeScreen} />
+                <Route exact path='/mangas' component={BuscarMangaScreen} />
+
+
             </Switch>
 
         </Router >

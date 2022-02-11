@@ -1,16 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { activeAnime } from '../../actions/Anime';
+import { uiOpenModal } from '../../actions/ui';
 
-export const GifGridItem = ({title, img}) =>{
+export const GifGridItem = ({ id, title, episodes, rating, img, synopsis, genre }) =>{
+
+    const dispatch = useDispatch();
+
+    const onClick = () => {
+        dispatch(
+        activeAnime(id, {
+                title, episodes, img, genre, synopsis,rating
+            })
+        ) 
+
+        dispatch(uiOpenModal());
+    }
+
     return (
-    <div className='card__container'>
-        <img src={img} alt={title} className='card__img'/>
-        <p>{title}</p>
+    <div 
+    onClick={onClick}
+    className='card animate__animated animate__bounce'>
+        <img src={img} alt={title}/>
+        <p></p>
     </div>
     )
-}
-
-GifGridItem.propTypes = {
-    title: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired
 }

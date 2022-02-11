@@ -15,7 +15,6 @@ export const BuscarMangaScreen = ({defaultCategories=[]}) => {
 
             <hr />
 
-            <ol>
                 {
                     categories.map((category =>
                         <GifGridManga
@@ -24,7 +23,6 @@ export const BuscarMangaScreen = ({defaultCategories=[]}) => {
                         />
                     ))
                 }
-            </ol>
 
         </div>
 

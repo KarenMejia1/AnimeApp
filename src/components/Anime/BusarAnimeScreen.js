@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AnimeModal } from '../ui/AnimeModal';
 import { AddCategory } from './BuscarAnime/AddCategory';
 import { GifGrid } from './BuscarAnime/GifGrid';
 
@@ -14,7 +15,6 @@ export const BuscarAnimeScreen = ({defaultCategories=[]}) => {
 
             <hr />
 
-            <ol>
                 {
                     categories.map((category =>
                         <GifGrid
@@ -22,10 +22,12 @@ export const BuscarAnimeScreen = ({defaultCategories=[]}) => {
                             category={category}
                         />
                     ))
-                }
-            </ol>
+                },
+                <AnimeModal/>
+            
 
         </div>
+        
 
     )
 }

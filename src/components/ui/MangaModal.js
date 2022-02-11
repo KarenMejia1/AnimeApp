@@ -21,7 +21,7 @@ const initEvent = {
     title: '',
 }
 
-export const AnimeModal = () => {
+export const MangaModal = () => {
 
     const dispatch = useDispatch();
     const { active: anime } = useSelector(state => state.animes)
@@ -98,8 +98,10 @@ export const AnimeModal = () => {
                         />
 
                         <div className='info_container'>
-                            <p>Numero de episodios</p>
+
+                            <p>Volumenes</p>
                             <p>Clasificación</p>
+
                             <input
                                 type="text"
                                 className="info__title-input"

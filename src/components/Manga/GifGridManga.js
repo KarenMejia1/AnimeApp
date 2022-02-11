@@ -14,7 +14,7 @@ return (
             {loading && <p className='card animate__animated animate__flash'>Loading</p>}
 
             
-        <div className='card__containerTop'>
+        <div className='card-grid'>
             {
                 images.map( img => (
                     <GifGridItem

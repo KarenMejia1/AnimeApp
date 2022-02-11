@@ -1,18 +1,144 @@
 .navbar__main {
-  display: flex;
-  background: #F7F8F8;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ACBB78, #F7F8F8);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
-  color: rgb(0, 0, 0);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid: 10px;
+  background: linear-gradient(to right, #292E49, #536976, #BBD2C5);
+  // background: #ac3232;  /* fallback for old browsers */
+  // background: linear-gradient(to right, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  // color: rgb(0, 0, 0);
   width: 100%;
 }
 
+.logo{
+
+    background: #BBD2C5;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #292E49, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-colo: transparent;
+  
+  margin: 10px;
+  font-size: 30px;
+
+  grid-column-start: 1;
+  grid-column-end: 1;
+
+  }
+
+
 .item {
-  margin: 20px;
+  font-size: 25px;
+  padding: 10px;
+  color: white;
+  transition: all 0.3s ease;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.item:hover{
+  color: rgb(146, 211, 146);
+  transition: all 0.3s ease;
 }
 
 .navbar__der {
-  display: flex;
-  align-content: flex-end;
-  align-items: flex-end;
+  display: grid;
+
+  grid-column-start: 4;
+  grid-column-end: 4;
+
+  color: white;
+
+  align-items: center;
+  align-items: center;
+
+
 }
+
+.navbar__der span{
+  font-size: 20px;
+}
+
+.navbar__der button{
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.navbar__der i{
+  visibility: hidden;
+}
+
+.navbar__der button:hover{
+transition: all 0.3s ease;
+background-color: rgb(235, 139, 139);
+}
+
+@media only screen and (max-width: 600px) {
+.item{
+  font-size: 20px;
+}
+
+.logo{
+  font-size: 20px;
+}
+
+.navbar__main{
+  height: 30px;
+}
+
+.navbar__der button{
+  font-size: 10px;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .item{
+    font-size: 20px;
+  }
+  
+  .logo{
+    font-size: 20px;
+  }
+  
+  .navbar__main{
+    height: 30px;
+  }
+  
+  .navbar__der button{
+    font-size: 10px;
+    visibility: hidden;
+  }
+  }
+
+  .navbar__der span{
+    font-size:13px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .navbar__der span{
+
+  }
+  .navbar__der i{
+    visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 200px) {
+
+  .navbar__der span{
+    margin-right: 30px;
+  }
+  .navbar__der i{
+    visibility: visible;
+  }
+}
+
+

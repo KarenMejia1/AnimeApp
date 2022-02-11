@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import { buscarAnime } from "../helpers/getAnimes";
-
-export const useFetchBuscarAnime =(category) =>{
+export const useFetchTopAnime =() =>{
 
     const [state, setState] = useState({
         data:[],
@@ -9,14 +6,13 @@ export const useFetchBuscarAnime =(category) =>{
     });
 
     useEffect(() =>{
-        buscarAnime(category)
+        getTopAnime()
         .then(info =>{
             setState({
                 data: info,
                 loading: false
             })
         })
-    },[category])
-    
+    },[])
     return state;
 }

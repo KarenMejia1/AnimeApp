@@ -1,6 +1,6 @@
 export const buscarAnime = async(category) =>{
 
-    const url = `https://api.jikan.moe/v4/anime?q=${encodeURI(category)}&limit=5`
+    const url = `https://api.jikan.moe/v4/anime?q=${encodeURI(category)}&limit=10`
     const resp = await fetch(url);
     const {data} = await resp.json();
 

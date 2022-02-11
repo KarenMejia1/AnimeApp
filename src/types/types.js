@@ -8,6 +8,9 @@ export const types = {
     animeLoad: '[Animes] Load Anime',
     animeUpdated: '[Animes] Update Anime',
 
+    mangaActive: '[Mangas] Set active Manga',
+    mangaLoad: '[Mangas] Load manga',
+
     authChecking: '[auth] Checking login state',
     
     authCheckingFinish: '[auth] Finish checking login state',
