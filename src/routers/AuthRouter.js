@@ -8,9 +8,9 @@ export const AuthRouter = () => {
     return(
 
         <div className='auth__main'>
-            
 
             <div className='auth__box-container'>
+            <h1 className='auth__logo'>Animep</h1>
                 <Switch>
 
                     <Route 

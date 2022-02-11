@@ -23,7 +23,6 @@ export const PrincipalScreen = () => {
             <AnimeModal />
 
             <TopManga/>
-            <MangaModal/>
 
             <Curiosidad/>
             

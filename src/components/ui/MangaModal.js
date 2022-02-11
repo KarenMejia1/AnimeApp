@@ -31,7 +31,7 @@ export const MangaModal = () => {
 
     const [formValues, setFormValues] = useState(initEvent);
 
-    const { id, title, episodes, rating, img, synopsis, genre } = formValues;
+    const { id, title, rating, img, vol, chap } = formValues;
 
 
     useEffect(() => {
@@ -92,7 +92,7 @@ export const MangaModal = () => {
                             className=" modal__sipnosis"
                             autoComplete='off'
                             name='sypnosis'
-                            value={synopsis}
+                            value={vol}
                             onChange={handleInputChange}
                             disabled
                         />
@@ -107,7 +107,7 @@ export const MangaModal = () => {
                                 className="info__title-input"
                                 autoComplete='off'
                                 name='episodes'
-                                value={episodes}
+                                value={vol}
                                 onChange={handleInputChange}
                                 disabled
                             />
@@ -118,7 +118,7 @@ export const MangaModal = () => {
                                 className="info__title-input"
                                 autoComplete='off'
                                 name='rating'
-                                value={rating}
+                                value={chap}
                                 onChange={handleInputChange}
                                 disabled
                             />

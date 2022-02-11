@@ -13,20 +13,19 @@ export const Banner = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>Shingeki no Kyojin: The Final Season Part 2</h3>
+                            <p>Final de temporada dos</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src="https://fondosmil.com/fondo/54660.png"
+                            src="https://www.kolpaper.com/wp-content/uploads/2020/05/4K-Demon-Slayer-Wallpaper.jpg"
                             alt="Second slide"
                         />
 
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h3>Kimetsu no Yaiba: Yuukaku-hen</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>

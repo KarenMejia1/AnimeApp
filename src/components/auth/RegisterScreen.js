@@ -10,10 +10,10 @@ export const RegisterScreen = () => {
     const dispatch = useDispatch();
 
     const [formRegisterValues, handleRegisterInputChange] = useForm({
-        rname: 'Karensita',
-        remail: 'karen@mep.com',
-        rpassword1: '123456',
-        rpassword2: '123456'
+        rname: '',
+        remail: '',
+        rpassword1: '',
+        rpassword2: ''
     });
 
     const { rname, remail, rpassword1, rpassword2 } = formRegisterValues;
@@ -37,7 +37,7 @@ console.log('e')
 
                 <input
                     type='text'
-                    placeholder='name'
+                    placeholder='Nombre'
                     name='rname'
                     value={rname}
                     onChange={handleRegisterInputChange}
@@ -47,7 +47,7 @@ console.log('e')
 
                 <input
                     type='text'
-                    placeholder='email'
+                    placeholder='Correo electronico'
                     name='remail'
                     value={remail}
                     onChange={handleRegisterInputChange}
@@ -57,7 +57,7 @@ console.log('e')
 
                 <input
                     type='password'
-                    placeholder='password'
+                    placeholder='Contraseña'
                     name='rpassword1'
                     value={rpassword1}
                     onChange={handleRegisterInputChange}
@@ -75,14 +75,14 @@ console.log('e')
 
                 <button
                     type='submit'
-                    className='btn btn-primary'
+                    className='buton_login'
                     >
                     Crear cuenta
                 </button>
 
                 <hr />
 
-                <div className='auth__social-networks'>
+                {/* <div className='auth__social-networks'>
 
                     <p>Iniciar sesion con Google</p>
 
@@ -96,7 +96,7 @@ console.log('e')
                             <b>Sign in with google</b>
                         </p>
                     </div>
-                </div>
+                </div> */}
 
                 <Link to='/auth/login'
                     className='link'>

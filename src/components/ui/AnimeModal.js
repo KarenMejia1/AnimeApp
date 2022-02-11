@@ -99,7 +99,7 @@ export const AnimeModal = () => {
 
                         <div className='info_container'>
                             <p>Numero de episodios</p>
-                            <p>Clasificación</p>
+                            
                             <input
                                 type="text"
                                 className="info__title-input"
@@ -109,7 +109,7 @@ export const AnimeModal = () => {
                                 onChange={handleInputChange}
                                 disabled
                             />
-
+                    <p>Clasificación</p>
                             <input
                                 type="text"
                                 placeholder="Some awesome title"

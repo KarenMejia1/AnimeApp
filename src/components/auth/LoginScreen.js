@@ -9,8 +9,8 @@ export const LoginScreen = () => {
     const dispatch = useDispatch();
 
     const[formLoginValues, handleLoginInputChange ] = useForm({
-        lemail: 'karen@mep.com',
-        lpassword: '123456'
+        lemail: '',
+        lpassword: ''
     });
 
     const {lemail, lpassword} = formLoginValues;
@@ -50,14 +50,14 @@ export const LoginScreen = () => {
 
             <button
                 type='submit'
-                className='btn btn-primary'
+                className='buton_login'
                 >
                 Iniciar Sesion
             </button>
 
             <hr />
 
-            <div className='auth__social-networks'>
+            {/* <div className='auth__social-networks'>
 
                 <p>Iniciar sesion con Google</p>
 
@@ -71,7 +71,7 @@ export const LoginScreen = () => {
                         <b>Iniciar sesion con Google</b>
                     </p>
                 </div>
-            </div>
+            </div> */}
 
             <Link to='/auth/register'
             className='link'>

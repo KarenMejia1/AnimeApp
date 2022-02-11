@@ -40,15 +40,9 @@ export const getTopAnime = async() => {
                 id: info.mal_id,
                 title: info.title,
                 img: info.images.jpg.large_image_url,
-                genre: info.genres,
-                episodes: info.episodes,
-                aired: info.aired,
-                rating: info.rating,
-                score: info.score,
-                status: info.status,
-                synopsis: info.synopsis,
-                title_english: info.title_english,
-                title_japanese: info.title_japanese,
+                vol: info.volumnes,
+                chap: info.chapters,
+                synopsis: info.synopsis
             }
         })
 
